@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Swiper demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="style1.css">
+
+    <!-- Demo styles -->
+    <style>
+        html,
+        body {
+            position: relative;
+            height: 100%;
+        }
+        
+        body {
+            background: #eee;
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color: #000;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .swiper {
+            width: 110%;
+            height: 70%;
+        }
+        
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            /* Center slide text vertically */
+            /* display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center; */
+        }
+        
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            /* height: 100%; */
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Swiper -->
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <p class="kopf">Peter Kluiber - Full-Stack Web Developer
+                    <img class="logo" src="logo.png" alt="logo">
+                </p>
+                <ul>
+                    <li><a class="active" href="#home">Home</a></li>
+                    <li><a href="#news">News</a></li>
+                    <li><a href="#Blog">Contact</a></li>
+                    <li><a href="#About me">About me</a></li>
+                    <li><a href="#Contact">Contact</a></li>
+                </ul>
+                <div>
+                    <h1><br>This is my first website :D</h1>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <p class="phone"><img src="Phone.png" alt="phone" height="250"></p>
+                <p class="Fuss1">Samsung Galaxy S11/S20 Plus video leaks showing phone in real life!</p>
+            </div>
+
+
+            <div class="swiper-slide">
+                <p><img src="Debit_card_ATM.jpg" alt="Debit" height="250"></p>
+                <p class="dep">Police are investigating three ATM explosions in two Florida counties</p>
+
+            </div>
+            <div class="swiper-slide">
+                <p><img src="Taxify-Scooters.jpg" alt="Scooter" height="250"></p>
+                <p class="sco">E-Scooter firm Bolt pulls out of 12 cities</p>
+            </div>
+
+            <div class="swiper-slide">
+                <p><img src="can.jpg" alt="logo" height="250"> </p>
+                <p>Peter Kluiber - CodeFactory2021</p>
+            </div>
+
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- Swiper JS -->
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js">
+    </script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 4,
+            spaceBetween: 30,
+            centeredSlides: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+    </script>
+</body>
+
+</html>

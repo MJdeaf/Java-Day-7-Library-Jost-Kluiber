@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>CR01</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" href="index.css">
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <style>
+        body {
+            font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+    </style>
+
+    <!-- Demo styles -->
+    <style>
+        html,
+        body {
+            position: relative;
+            height: 100%;
+        }
+        
+        body {
+            background: #eee;
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color: #000;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .swiper {
+            width: 100%;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+        
+        .swiper-slide {
+            background-position: center;
+            background-size: cover;
+            width: 300px;
+            height: 300px;
+        }
+        
+        .swiper-slide img {
+            display: block;
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Swiper -->
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="tastatur.gif" />
+            </div>
+            <div class="swiper-slide">
+                <img src="code.gif" />
+            </div>
+            <div class="swiper-slide">
+                <img src="https://th.bing.com/th/id/R.b9a39508b35fd651d4b796e6fbda1494?rik=Qw0mpbyMIuXeWQ&pid=ImgRaw&r=0" />
+            </div>
+            <div class="swiper-slide">
+                <img src="https://media1.tenor.com/images/c4ad8a71652f331c5a4d3674615bfba4/tenor.gif?itemid=14480338" />
+            </div>
+            <div class="swiper-slide">
+                <img src="https://img2.thejournal.ie/inline/1141201/original/?width=400&version=1141201" />
+            </div>
+
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <div class="ver">
+
+        <p class="kopf">Peter Kluiber - Full-Stack Web Developer
+            <img class="logo" src="logo.png" alt="logo">
+        </p>
+
+        <ul>
+            <li><a class="active" href="#home">Home</a></li>
+            <li><a href="#news">News</a></li>
+            <li><a href="#Blog">Contact</a></li>
+            <li><a href="#About me">About me</a></li>
+            <li><a href="#Contact">Contact</a></li>
+        </ul>
+
+        <h1>This is my first website :D</h1>
+
+
+        <p class="phone"><img src="Phone.png" alt="phone" width="800" height="200"></p>
+        <p class="Fuss1">Samsung Galaxy S11/S20 Plus video leaks showing phone in real life!</p>
+
+        <div class="Depit">
+            <p><img src="Debit_card_ATM.jpg" alt="Debit" width="350" height="300"></p>
+            <p class="Deb">Police Are investigating three</p>
+            <p class="Deb">ATM explosions in two Florida counties</p>
+        </div>
+
+        <div class="Scooter">
+            <p><img src="Taxify-Scooters.jpg" alt="Scooter" width="350" height="300"></p>
+            <p class="Sco">E-Scooter firm Bolt pulls out of 12 cities</p>
+        </div>
+
+        <footer class="Foot">
+            <p><img src="logo.png" alt="logo" width="200" height="100"> </p>
+            <p>Peter Kluiber - CodeFactory2021</p>
+        </footer>
+    </div>
+
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: "auto",
+            coverflowEffect: {
+                rotate: 50,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows: true,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+            },
+        });
+    </script>
+
+    <script>
+        (async() => {
+
+            const {
+                value: fruit
+            } = await Swal.fire({
+                title: 'Select field validation',
+                input: 'select',
+                inputOptions: {
+                    'Fruits': {
+                        apples: 'Apples',
+                        bananas: 'Bananas',
+                        grapes: 'Grapes',
+                        oranges: 'Oranges'
+                    },
+                    'Vegetables': {
+                        potato: 'Potato',
+                        broccoli: 'Broccoli',
+                        carrot: 'Carrot'
+                    },
+                    'icecream': 'Ice cream'
+                },
+                inputPlaceholder: 'Select a fruit',
+                showCancelButton: true,
+                inputValidator: (value) => {
+                    return new Promise((resolve) => {
+                        if (value === 'oranges') {
+                            resolve()
+                        } else {
+                            resolve('You need to select oranges :)')
+                        }
+                    })
+                }
+            })
+
+            if (fruit) {
+                Swal.fire(`You selected: ${fruit}`)
+            }
+
+        })()
+    </script>
+</body>
+
+</html>
